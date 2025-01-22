@@ -17,5 +17,21 @@
 @import "bootstrap";
 
 body {
-  background-color: #8ac0f7;
+  background-color: #b5d7f9;
+}
+.form-container {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.field {
+  text-align: left;
+}
+
+.actions {
+  text-align: center;
 }
