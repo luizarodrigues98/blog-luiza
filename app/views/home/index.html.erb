@@ -1,0 +1,9 @@
+<%= render 'shared/navbar' %>
+
+<div class="container mt-4">
+  <h1>Home</h1>
+
+  <% @users.each do |user| %>
+    <%= user.name %>
+  <% end %>
+</div>
