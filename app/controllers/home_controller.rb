@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    @user = User.find_by(id: params[:id])
+    @posts = Post.all
   end
 end

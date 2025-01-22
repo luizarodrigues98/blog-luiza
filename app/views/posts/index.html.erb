@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Meus Posts</h1>
+  
+  <% if @posts.any? %>
+    <div class="posts-container">
+      <% @posts.each do |post| %>
+        <div class="post-card">
+          <h2><%= post.title %></h2>
+          <p><%= post.content %></p>
+          <small>Criado em: <%= post.created_at.strftime("%d/%m/%Y") %></small>
+          
+          <div class="actions">
+            <%= link_to 'Ver', post_path(post), class: 'btn btn-primary' %>
+            <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
+            <%= link_to 'Excluir', post_path(post), 
+                method: :delete, 
+                data: { confirm: 'Tem certeza?' }, 
+                class: 'btn btn-danger' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Você ainda não tem nenhum post.</p>
+  <% end %>
+  
+  <%= link_to 'Criar Novo Post', new_post_path, class: 'btn btn-success' %>
+</div>

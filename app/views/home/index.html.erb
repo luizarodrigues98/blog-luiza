@@ -1,9 +1,30 @@
-<%= render 'shared/navbar' %>
-
 <div class="container mt-4">
-  <h1>Home</h1>
-
-  <% @users.each do |user| %>
-    <%= user.name %>
+  <% if current_user %>
+    <p class="text-center">Olá, <%= current_user.email %>!</p>
   <% end %>
 </div>
+
+<%= render 'shared/posts' %>
+
+<% if !current_user %>
+  <p class="text-center">Olá, visitante! Aqui você pode ver os posts de outros usuários sobre tecnologias em geral.</p>
+  <p class="text-center">Para criar posts, você precisa estar logado.</p>
+<% end %>
+
+<div class="container mt-4">
+  <h2>Posts recentes</h2>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= post.content %></p>
+            <small class="text-muted"><%= post.created_at.strftime("%d/%m/%Y %H:%M") %></small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
