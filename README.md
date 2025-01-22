@@ -1,24 +1,53 @@
-# README
+# Blog Pessoal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Descrição
+Um blog pessoal desenvolvido em Ruby on Rails com sistema de autenticação utilizando Devise. Permite criar, editar e gerenciar posts, além de um painel administrativo para o autor do blog.
 
-Things you may want to cover:
+## Requisitos do Sistema
+- Ruby 3.2.0
+- Rails 7.0.0
+- PostgreSQL 14.0
 
-* Ruby version
+## Configuração do Ambiente
 
-* System dependencies
+### 1. Instalação das Dependências
+```
+git clone git@github.com:luizarodrigues98/blog-luiza.git
+cd blog-luiza
+```
 
-* Configuration
+### 2. Configuração do Banco de Dados
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+### 3. Iniciar o servidor
+```
+rails s
+```
+O blog estará disponível em `http://localhost:3000`
 
-* Database creation
+## Funcionalidades
+- Sistema de autenticação completo (login, registro, recuperação de senha)
+- Criação e edição de posts
+- Categorização de posts por tags
+- Comentários em posts
+- Painel administrativo para gerenciamento de conteúdo
+- Interface responsiva
 
-* Database initialization
+## Acessando o Sistema
 
-* How to run the test suite
+### Usuário Admin Padrão
+- Email: admin@exemplo.com
+- Senha: 123456
 
-* Services (job queues, cache servers, search engines, etc.)
+### Áreas do Sistema
+- `/` - Página inicial com lista de posts
+- `/posts` - Lista de todos os posts
+- `/posts/new` - Criar novo post (requer autenticação)
 
-* Deployment instructions
+## Personalização
+### Configuração do Devise
+O arquivo de configuração do Devise pode ser encontrado em:
 
-* ...
