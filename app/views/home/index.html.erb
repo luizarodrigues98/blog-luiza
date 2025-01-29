@@ -1,9 +1,4 @@
-<div class="container mt-4">
-  <% if current_user %>
-    <p class="text-center">Olá, <%= current_user.email %>!</p>
-  <% end %>
-</div>
-
+<%= render 'shared/luizalopes' %>
 <%= render 'shared/posts' %>
 
 <% if !current_user %>
@@ -17,11 +12,17 @@
       <% @posts.each do |post| %>
         <div class="col-md-4 mb-4">
           <div class="card">
+            <% post.photos.each do |photo| %>
+              <%= image_tag photo, class: 'img-fluid w-25 p-2' %>
+            <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= post.title %></h5>
               <p class="card-text"><%= post.content %></p>
               <small class="text-muted"><%= post.created_at.strftime("%d/%m/%Y %H:%M") %></small>
             </div>
+          </div>
+          <div>
+            <%= link_to 'Ver', post_path(post), class: 'btn btn-primary' %>
           </div>
         </div>
       <% end %>

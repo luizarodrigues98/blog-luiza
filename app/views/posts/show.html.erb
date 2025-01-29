@@ -1,5 +1,8 @@
 <div class="container mt-4">
   <h1>Post</h1>
+  <% @post.photos.each do |photo| %>
+    <%= image_tag photo, class: 'img-fluid w-25' %>
+  <% end %>
   <h2><%= @post.title %></h2>
   <p><%= @post.content %></p>
   <small>Criado em: <%= @post.created_at.strftime("%d/%m/%Y") %></small>

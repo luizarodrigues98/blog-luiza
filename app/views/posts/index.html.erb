@@ -6,10 +6,13 @@
       <% @posts.each do |post| %>
         <div class="post-card">
           <h2><%= post.title %></h2>
+          <% post.photos.each do |photo| %>
+            <%= image_tag photo, class: 'img-fluid w-25' %>
+          <% end %>
           <p><%= post.content %></p>
           <small>Criado em: <%= post.created_at.strftime("%d/%m/%Y") %></small>
           
-          <div class="actions">
+          <div>
             <%= link_to 'Ver', post_path(post), class: 'btn btn-primary' %>
             <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
             <%= link_to 'Excluir', post_path(post), 
