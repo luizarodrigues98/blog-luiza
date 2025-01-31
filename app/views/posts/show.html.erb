@@ -1,17 +1,19 @@
 <div class="container mt-4">
-  <h1>Post</h1>
+  <h1 class="text-white">Post</h1>
   <% @post.photos.each do |photo| %>
     <%= image_tag photo, class: 'img-fluid w-25' %>
   <% end %>
-  <h2><%= @post.title %></h2>
-  <p><%= @post.content %></p>
-  <small>Criado em: <%= @post.created_at.strftime("%d/%m/%Y") %></small>
-  <div class="actions">
-    <%= link_to 'Editar', edit_post_path(@post), class: 'btn btn-warning' %>
-    <%= button_to 'Excluir', post_path(@post), 
-                  method: :delete, 
-                  class: 'btn btn-danger', 
-                  form: { data: { turbo_confirm: 'Tem certeza que deseja excluir este post?' } } %>
-    <%= link_to 'Voltar', posts_path, class: 'btn btn-secondary' %>
+  <h2 class="text-white"><%= @post.title %></h2>
+  <p class="text-white"><%= @post.content %></p>
+  <small class="text-white">Criado em: <%= @post.created_at.strftime("%d/%m/%Y") %></small>
+  <% if current_user && current_user.id == @post.user_id %>
+    <div class="actions">
+      <%= link_to 'Editar', edit_post_path(@post), class: 'link-light' %>
+      <%= button_to 'Excluir', post_path(@post), 
+                method: :delete, 
+                class: 'btn btn-link link-light p-0',
+                form: { data: { turbo_confirm: 'Tem certeza que deseja excluir este post?' } } %>
+    <% end %>
+    <%= link_to 'Voltar', root_path, class: 'link-light' %>
   </div>
 </div>

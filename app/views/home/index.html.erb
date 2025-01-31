@@ -2,12 +2,12 @@
 <%= render 'shared/posts' %>
 
 <% if !current_user %>
-  <p class="text-center">Olá, visitante! Aqui você pode ver os posts de outros usuários sobre tecnologias em geral.</p>
-  <p class="text-center">Para criar posts, você precisa estar logado.</p>
+  <p class="text-center text-white">Olá, visitante! Aqui você pode ver os posts de outros usuários sobre tecnologias em geral.</p>
+  <p class="text-center text-white">Para criar posts, você precisa estar logado.</p>
 <% end %>
 <%if @posts.any?%>
-  <div class="container mt-4">
-    <h2>Posts recentes</h2>
+  <div class="container mt-4" id="posts-container">
+    <h2 class="text-white">Posts recentes</h2>
     <div class="row">
       <% @posts.each do |post| %>
         <div class="col-md-4 mb-4">
@@ -16,19 +16,19 @@
               <%= image_tag photo, class: 'img-fluid w-25 p-2' %>
             <% end %>
             <div class="card-body">
-              <h5 class="card-title"><%= post.title %></h5>
-              <p class="card-text"><%= post.content %></p>
-              <small class="text-muted"><%= post.created_at.strftime("%d/%m/%Y %H:%M") %></small>
+              <h5 class="card-title text-white"><%= post.title %></h5>
+              <small class="text-white"><%= post.created_at.strftime("%d/%m/%Y %H:%M") %></small>
+              <div>
+                <%= link_to 'Ver', post_path(post), class: 'link-light' %>
+              </div>
             </div>
           </div>
-          <div>
-            <%= link_to 'Ver', post_path(post), class: 'btn btn-primary' %>
-          </div>
+
         </div>
       <% end %>
     </div>
   </div>
 <%else%>
-  <p class="text-center">Não há posts recentes.</p>
+  <p class="text-center text-white">Não há posts recentes.</p>
 <%end%>
 

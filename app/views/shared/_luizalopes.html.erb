@@ -11,26 +11,33 @@
       <h3>Competências Técnicas</h3>
       <div class="technical-skills">
         <ul>
-          <li>Back-end: Ruby on Rails</li>
-          <li>Front-end: React, Vue.js</li>
-          <li>DevOps: Docker, Kubernetes</li>
-          <li>Cloud: AWS</li>
+          <li><%= link_to "Back-end: Ruby on Rails", "https://rubyonrails.org/", class: "no-underline" %></li>
+          <li><%= link_to "Front-end: React, Vue.js", "https://reactjs.org/", class: "no-underline" %></li>
+          <li><%= link_to "DevOps: Docker, Kubernetes", "https://www.docker.com/", class: "no-underline" %></li>
+          <li><%= link_to "Cloud: AWS", "https://aws.amazon.com/", class: "no-underline" %></li>
         </ul>
       </div>
 
       <h3>Metodologias Ágeis</h3>
       <div class="agile-skills">
         <ul>
-          <li>Scrum</li>
-          <li>Kanban</li>
+          <li><%= link_to "Scrum", "https://www.scrum.org/" %></li>
+          <li><%= link_to "Kanban", "https://kanban.com/" %></li>
         </ul>
       </div>
     </div>
 
-    <div class="about">
+    <div class="about" id="about">
       <h3>Sobre mim</h3>
       <p>Sou uma profissional comunicativa e apaixonada por desenvolvimento de software. Minha jornada na programação começou antes mesmo de minha experiência profissional, demonstrando meu comprometimento genuíno com a área.</p>
       <p>Busco constantemente aprender novas tecnologias e contribuir com soluções inovadoras em equipes dinâmicas.</p>
+    </div>
+
+    <div class="contact" id="contact">
+      <h3>Contatos</h3>
+      <p>Email: luiza.oceanoufc@gmail.com</p>
+      <p>LinkedIn: <%= link_to "Luiza Lopes", "https://www.linkedin.com/in/luiza-lopes-8051141a7", class: "no-underline text-white" %></p>
+      <p>Whatsapp: +55 85 98728-5397</p>
     </div>
   </div>
 </div>

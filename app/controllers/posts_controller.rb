@@ -34,11 +34,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
     if @post.destroy
-      redirect_to posts_path, notice: "Postagem excluída com sucesso"
+      redirect_to root_path, notice: "Postagem excluída com sucesso"
     else
-      redirect_to posts_path, alert: "Erro ao excluir postagem"
+      redirect_to root_path, alert: "Erro ao excluir postagem"
     end
   end
 

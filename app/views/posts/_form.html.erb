@@ -1,9 +1,9 @@
 <%= form_with model: post do |form| %>
   <div class="form-group">
-    <%= form.label :title, "Título" %>
+    <%= form.label :title, "Título", class: "form-label" %>
     <%= form.text_field :title, class: 'form-control' %>
 
-    <%= form.label :content, "Conteúdo" %>
+    <%= form.label :content, "Conteúdo", class: "form-label" %>
     <%= form.text_area :content, class: 'form-control' %>
 
     <div class="mb-3">

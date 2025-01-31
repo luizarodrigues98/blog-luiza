@@ -46,8 +46,3 @@ O blog estará disponível em `http://localhost:3000`
 - `/` - Página inicial com lista de posts
 - `/posts` - Lista de todos os posts
 - `/posts/new` - Criar novo post (requer autenticação)
-
-## Personalização
-### Configuração do Devise
-O arquivo de configuração do Devise pode ser encontrado em:
-

@@ -32,6 +32,20 @@ body {
   text-align: left;
 }
 
-.actions {
-  text-align: center;
+
+.card {
+  background-color: #01012a;
+}
+.form-label {
+  color: #fff;
+}
+
+.my-posts {
+  color: #fff;
+}
+
+#posts-container {
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }

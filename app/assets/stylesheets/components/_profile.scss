@@ -41,13 +41,13 @@ html {
 }
 
 .skills-section {
-  background-color: #f8f9fa;
+  background-color: #01012a;
   padding: 2.5rem;
   border-radius: 12px;
   margin-bottom: 3rem;
   
   h3 {
-    color: #2c3e50;
+    color: #f6f7f8;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -113,3 +113,18 @@ html {
     padding: 1.5rem;
   }
 } 
+
+.contact {
+  h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  p {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+}
